@@ -1,4 +1,4 @@
-function main() {
+window.onload = function main() {
     let socket = new WebSocket("wss://rblxwild.com/socket.io/?EIO=4&transport=websocket");
     socket.onopen = function(e) {}
     socket.onmessage = function(event) {
@@ -45,16 +45,8 @@ function main() {
             }
         }
     }
-    
-    socket.onclose = function(event) {
-    console.log(event)
-        ws.close()
-        main()
-    }
-    
     socket.onerror = function(error) {
         console.log(error)
         main()
     }
 }
-main()
