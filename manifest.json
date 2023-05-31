@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "BloxSocket",
+    "description": "Automatically join RBLXWild case battles with chrome extension.",
+    "version": "0.0.1",
+    "host_permissions": ["https://rblxwild.com/*"],
+    "icons": {"48": "logo.png"},
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["https://rblxwild.com/*"],
+            "js": ["rblxwild.js"]
+        }
+    ],
+    "action": {
+        "default_title": "BloxSocket",
+        "default_popup": "popup.html"
+    }
+}
