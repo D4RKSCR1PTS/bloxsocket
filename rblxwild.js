@@ -2,7 +2,7 @@ window.onload = function main() {
     let socket = new WebSocket("wss://rblxwild.com/socket.io/?EIO=4&transport=websocket");
     socket.onopen = function(e) {}
     socket.onmessage = function(event) {
-        if (!(event.data.includes("syncResponse"))) console.log(event.data)
+        if (!(event.data.includes("syncResponse")))
         if (event.data.startsWith("0")) {
             socket.send("40")
         }
@@ -46,7 +46,6 @@ window.onload = function main() {
         }
     }
     socket.onerror = function(error) {
-        console.log(error)
         main()
     }
 }
